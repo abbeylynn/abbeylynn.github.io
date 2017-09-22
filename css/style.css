@@ -1,0 +1,93 @@
+.nav-wrapper {
+  background-color:#286168;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.top-section-container {
+  background: #81aa42;
+  color:#162635;
+}
+
+.welcome {
+  color:white;
+  font-size:22px;
+  font-style:italic;
+  font-weight:normal;
+}
+
+.main-text {
+  font-size:20px;
+  font-color:black;
+  font-weight:bold;
+}
+
+.center {
+  font-color:#162635;
+}
+
+.main-button {
+  background-color:#162635;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+.material-icons {
+  color:#286168;
+}
+
+.bottom-container {
+  background-color:#286168;
+  color:white;
+}
+
+.page-footer {
+  background-color:#286168;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.collapsible-header, .download-link {
+  color:#286168;
+  font-size:16px;
+}
+
