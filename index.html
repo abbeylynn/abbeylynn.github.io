@@ -19,17 +19,16 @@
         </ul>
       </div>
     </nav>
-    <div id="index-banner" class="top-section-container">
+    <div id="index-banner" class="top-section-container z-depth-4">
       <div class="container">
         <div class="header center"><img src="signature_clipped_rev_1.png" width=400px></div>
         <h5 class="header col s12 light center">
         <div class="main-text">
           <div class="welcome">Welcome, and thank you for taking the time to learn more about me!</div>
           <ul>
-            <li>I love to write.</li>
-            <li>I believe that communication can change the world in the best way.</li>
-            <li>Teamwork is my favorite.</li>
-            <li>I bring big ideas and the skills to make them happen.</li>
+            <li>I am happiest when I am on a team, whether my role is motivator, creator or leader.</li>
+            <li>I love developing exciting content that makes people stop and pay attention.</li>
+            <li>I want to use my coding skills to make beautiful websites that are a pleasure to use.</li>
             <li>I’m a fast learner, a problem solver and I make a mean NY-style cheesecake. </li>
           </ul>
         </div>
@@ -52,21 +51,21 @@
             <div class="icon-block">
               <h2 class="center"><i class="material-icons">star</i></h2>
               <h5 class="center"><a href="about-me.html" style="color: #162635">About Me</a></h5>
-              <p class="light">One of our greatest desires as human beings is to connect with others in a meaningful way. My passion is to bring people together and to foster these connections through my work. </p>
+              <p class="light">One of our greatest desires as human beings is to connect with others in a meaningful way. My passion is to bring people together and to foster these connections through my work. <a href="about-me.html" style="color:#cf3f1c"> Visit the About Me Page!</a></p>
             </div>
           </div>
           <div class="col s12 m4">
             <div class="icon-block">
               <h2 class="center"><i class="material-icons">work</i></h2>
               <h5 class="center"><a href="resume.html" style="color: #162635">Resume</a></h5>
-              <p class="light">As the Director of Communications and Marketing at Book Hill Partners, I develop and implement all communications initiatives for the National Structured Settlements Trade Association.</p>
+              <p class="light">As the Director of Communications and Marketing at Book Hill Partners, I develop and implement communication initiatives for the National Structured Settlements Trade Association.<a href="resume.html" style="color:#cf3f1c"> View My Resume Here!</a></p>
             </div>
           </div>
           <div class="col s12 m4">
             <div class="icon-block">
               <h2 class="center"><i class="material-icons">attach_file</i></h2>
               <h5 class="center"><a href="portfolio.html" style="color: #162635">Portfolio</a></h5>
-              <p class="light">Something TBD here.</p>
+              <p class="light">Visit my portfolio page to view writing samples, coding projects completed as part of the UCI Coding Bootcamp and to access my GitHub account.<a href="about-me.html" style="color:#cf3f1c"> View the Portfolio Page!</a></p>
             </div>
           </div>
         </div>
@@ -84,6 +83,94 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else {
+      // The person is not logged into your app or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '129221391068505',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.8' // use graph api version 2.8
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
