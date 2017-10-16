@@ -3,6 +3,12 @@
   padding:0px 30px 0px 30px;
 }
 
+nav a {
+  font-size:20px;
+  font-weight:bold;
+}
+
+
 p {
   line-height: 2rem;
 }
@@ -28,6 +34,7 @@ p {
   font-size:18px;
   font-color:black;
   font-weight:bold;
+  line-height:1.75;
 }
 
 .center {
@@ -54,6 +61,9 @@ p {
 .page-footer {
   background-color:#286168;
 }
+
+.carousel .carousel-item {
+width:350px !important;}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
