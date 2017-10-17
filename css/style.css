@@ -54,7 +54,9 @@ p {
   color:white;
 }
 
-.card-image {
+.card-image { 
+  display: inline-block; 
+  filter: sepia(40%) contrast(125%);
   padding:20px;
 }
 
